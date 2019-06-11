@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result Page</title>
+</head>
+<body>
+<h1> Put your symptoms here and we will predict your disease.</h1>
+<h1>{{result}}</h1>
+
+<form action="/input/finalValues/" method="GET">
+{#     Age:<input type="float" name="age"  ><br><br>#}
+{#    Sex:<input type="float" name="sex"  ><br><br>#}
+{#    OnThyroxine:<input type="float" name="thyroxine"  ><br><br>#}
+{##}
+{#    On_antithyroid:<input type="float" name="On_antithyroid"  ><br><br>#}
+{##}
+{#    thyroid surgery:<input type="float" name="thyroid surgery"  ><br><br>#}
+{##}
+{#    I131 treatment:<input type="float" name="I131 treatment"  ><br><br>#}
+{#    Goiter:<input type="float" name="Goiter"  ><br><br>#}
+{#    hypopituitary:<input type="float" name="hypopituitary"  ><br><br>#}
+    RT3U:<input type="float" name="rt3u" > range from (65,144)<br><br>
+    T4:<input type="float" name="t4"  > range from (0.5,25.3)<br><br>
+    T3:<input type="float" name="t3"  >range from (0.2,10.0)<br><br>
+    TSH:<input type="float" name="tsh" >range from (0.1,56.4)<br><br>
+    DTSH:<input type="float" name="dtsh" >range from (-0.7,56.3)<br><br>
+
+
+
+    <input type="submit" value="Submit" >
+
+
+
+</form>
+
+
+</body>
+{#RT3U:<input type="float" name="rt3u"  ><br><br>#}
+{#    T3:<input type="float" name="t3"  ><br><br>#}
+{#    T4:<input type="float" name="t4"  ><br><br>#}
+{#    TSH:<input type="float" name="tsh" ><br><br>#}
+{#    DTSH:<input type="float" name="dtsh" ><br><br>#}
+{#    <input type="submit" value="Submit" >SUBMIT</html>#}
