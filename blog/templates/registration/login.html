@@ -1,0 +1,18 @@
+{% extends 'partials/base.html' %}
+
+{% block title %} Add Blog {% endblock %}
+
+{% block content %}
+
+<form method="POST" action=''>
+	{% csrf_token %}
+	{{form.as_p}}
+	<button class="btn btn-success" type="submit">Submit</button>
+</form>
+<div class="border-top pt-3">
+        <small class="text-muted">
+            Need an Account? <a class="ml-2" href="{% url 'signup' %}" >Sign Up Now</a>
+
+        </small>
+</div>
+{%endblock%}

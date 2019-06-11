@@ -1,0 +1,74 @@
+{% extends 'partials/base.html' %}
+
+{% block title %} Dashboard {% endblock %}
+{% block content %}
+
+{%if latest_blog%}
+<div class="row">
+    <h1>LATEST BLOG</h1>
+  <div class="col-md-4">
+    <h3>{{latest_blog.title}}</h3>
+    <span>{{latest_blog.created_date}}</span>
+    <p>{{latest_blog.description}}</p>
+      <img src="{{latest_blog.image}}">
+      <img class="rounded-circle article-img"src="{{ latest_blog.image.url  }}">
+
+  </div>
+</div><br><br><br><br>
+
+  {%else%}
+  <strong>There is no latest blog</strong>
+
+  {% endif %}
+  <div class="row">
+    {%for blog in blogs%}
+    <div class="col-md-4">
+      <a href="/blog/detail/{{blog.id}}/">
+        <h3>{{blog.title}}</h3>
+      </a>
+      <span>{{blog.created_date}}</span>
+      <p>{{blog.description}}</p>
+      <img src="{{blog.image}}">
+        <img class="rounded-circle article-img"src="{{ blog.image.url|default_if_none:'#'  }}"/>
+
+    </div>
+    {% endfor%}
+  </div>
+
+
+{#{%if latest_blog%}#}
+{#    <h1>LATEST BLOG</h1>#}
+{#    <article class="media content-section">#}
+{#      <div class="media-body">#}
+{#        <div class="article-metadata">#}
+{#          <a class="mr-2" href="#">{{ latest_blog.title }}</a>#}
+{#          <small class="text-muted">{{ latest_blog.created_date|date:"F d, Y"}}</small>#}
+{#        </div>#}
+{#        <h2><a class="article-title" href="{% url 'blog_details'  blog.id %}">{{ blog.id }}</a></h2>#}
+{#        <p class="article-content">{{ latest_blog.description }}</p>#}
+{#      </div>#}
+{#    </article>#}
+{##}
+{#<br><br><br><br>#}
+{##}
+{#  {%else%}#}
+{#  <strong>There is no latest blog</strong>#}
+{##}
+{#  {% endif %}#}
+{#  <div class="row">#}
+{#    {%for blog in blogs%}#}
+{#        <article class="media content-section">#}
+{#      <div class="media-body">#}
+{#        <div class="article-metadata">#}
+{#          <a class="mr-2" href="#">{{ blog.title }}</a>#}
+{#          <small class="text-muted">{{ blog.created_date|date:"F d, Y"}}</small>#}
+{#        </div>#}
+{#        <h2><a class="article-title" href="{% url 'blog_details'  blog.id %}">{{ blog.id }}</a></h2>#}
+{#        <p class="article-content">{{ blog.description }}</p>#}
+{#      </div>#}
+{#    </article>#}
+{#    {% endfor%}#}
+{#  </div>#}
+{##}
+
+{% endblock %}
